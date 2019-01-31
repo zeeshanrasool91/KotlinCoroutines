@@ -30,9 +30,9 @@ class MainActivity : AppCompatActivity() {
                 val response = postRequest.await()
                 if(response.isSuccessful){
                     val posts = response.body()
-                    Log.d("MainActivity Posts",posts.toString())
+                    //Log.d("MainActivity Posts",posts.toString())
                 }else{
-                    Log.d("MainActivity ",response.errorBody().toString())
+                    //Log.d("MainActivity ",response.errorBody().toString())
                 }
                 
             }catch (e: Exception){
@@ -48,9 +48,9 @@ class MainActivity : AppCompatActivity() {
                 val response = userRequest.await()
                 if(response.isSuccessful){
                     val users = response.body()
-                    Log.d("MainActivity Users",users.toString())
+                    //Log.d("MainActivity Users",users.toString())
                 }else{
-                    Log.d("MainActivity ",response.errorBody().toString())
+                    //Log.d("MainActivity ",response.errorBody().toString())
                 }
 
             }catch (e: Exception){
@@ -67,9 +67,9 @@ class MainActivity : AppCompatActivity() {
                     val photos = response.body()
                     val lastPhotoUrl = photos?.last()?.url
                     Picasso.get().load(lastPhotoUrl).into(imageView)
-                    Log.d("MainActivity photos",photos.toString())
+                    //Log.d("MainActivity photos",photos.toString())
                 }else{
-                    Log.d("MainActivity ",response.errorBody().toString())
+                    //Log.d("MainActivity ",response.errorBody().toString())
                 }
 
 
@@ -86,11 +86,11 @@ class MainActivity : AppCompatActivity() {
                 if(response.isSuccessful){
                     val movieResponse = response.body() //This is single object Tmdb Movie response
                     val popularMovies = movieResponse?.results // This is list of TMDB Movie
-                    Log.d("MainActivity movies",movieResponse.toString())
-                    Log.d("MainActivity popularMovies",popularMovies.toString())
+                    //Log.d("MainActivity movies",movieResponse.toString())
+                    //Log.d("MainActivity popularMovies",popularMovies.toString())
 
                 }else{
-                    Log.d("MainActivity ",response.errorBody().toString())
+                    //Log.d("MainActivity ",response.errorBody().toString())
                 }
             }catch (e: Exception){
                 e.printStackTrace()
